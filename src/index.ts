@@ -4,6 +4,9 @@ import { AddressInfo } from "net"
 import postEstudante from "./endpoints/postEstudante"
 import putEstudanteTurma from "./endpoints/putEstudanteTurma"
 import getEstudantes from "./endpoints/getEstudantes"
+import postTurma from "./endpoints/postTurma"
+import getTurma from "./endpoints/getTurma"
+import putTurma from "./endpoints/putTurma"
 
 const app: Express = express()
 app.use(express.json())
@@ -14,6 +17,10 @@ app.get("/", (req, res) => res.send("Server is running"))
 app.get("/estudante", getEstudantes)
 app.post("/estudante", postEstudante)
 app.put("/estudante/", putEstudanteTurma)
+
+app.get("/turma", getTurma)
+app.post("/turma", postTurma)
+app.put("/turma", putTurma)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
