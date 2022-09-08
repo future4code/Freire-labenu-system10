@@ -1,0 +1,20 @@
+###
+POST http://localhost:3003/turma
+Content-Type: application/json
+
+{
+    "nome": "Shaw",
+    "modulo":"0"
+}
+
+###
+GET http://localhost:3003/turma
+
+###
+PUT http://localhost:3003/turma
+Content-Type: application/json
+
+{
+    "id": "980134f9-c8e0-4593-a451-0d63dbddf514",
+    "modulo":"1"
+}

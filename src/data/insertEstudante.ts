@@ -1,7 +1,7 @@
 import { connection } from "./connection";
 import { Estudante } from "../types";
 
-const insertProduct = async (Estudante: Estudante): Promise<void> => {
+const insertEstudante = async (Estudante: Estudante): Promise<void> => {
     await connection("estudante").insert({
         id: Estudante.id,
         nome: Estudante.nome,
@@ -11,4 +11,4 @@ const insertProduct = async (Estudante: Estudante): Promise<void> => {
     })
 }
 
-export default insertProduct;
+export default insertEstudante;

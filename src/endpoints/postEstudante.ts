@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import insertProduct from "../data/insertEstudante";
+import insertEstudante from "../data/insertEstudante";
 import { v4 as uuid } from "uuid";
 import selectTurmaById from "../data/selectTurmaById";
 import selectEstudanteByEmail from "../data/selectEstudanteByEmail";
@@ -39,7 +39,7 @@ const postEstudante = async (req: Request, res: Response) => {
         await selectTurmaById(turma_id).catch((error) => {statusCode = 404; throw new Error(error.message)});
         await selectEstudanteByEmail(email).catch((error) => {statusCode = 409; throw new Error(error.message)});
 
-        await insertProduct({ id, nome, email, data_nasc, turma_id });
+        await insertEstudante({ id, nome, email, data_nasc, turma_id });
         res.status(201).send({ message: "Estudante criado com sucesso!" });
 
 
