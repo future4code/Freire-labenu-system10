@@ -15,7 +15,7 @@ const postTurma = async (req: Request, res: Response) =>{
 await insertTurma ({id, nome, modulo})
 statusCode = 200
 res.status(statusCode).send({message:"Turma criada com sucesso!"})
- } catch (error) {
+ } catch (error: any) {
     error.sqlMessage ? res.status(statusCode).send({ message: error.sqlMessage })
     : res.status(statusCode).send({ message: error.message });  
  }

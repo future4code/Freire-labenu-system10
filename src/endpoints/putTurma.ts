@@ -20,7 +20,7 @@ const putTurma = async (req: Request, res: Response) => {
         statusCode = 200;
         res.status(statusCode).send({ message: "Módulo atualizado com sucesso!" });
 
-    } catch (error) {
+    } catch (error: any) {
         error.sqlMessage ? res.status(statusCode).send({ message: error.sqlMessage })
             : res.status(statusCode).send({ message: error.message });
     }
