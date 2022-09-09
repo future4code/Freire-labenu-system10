@@ -7,6 +7,8 @@ import getEstudantes from "./endpoints/getEstudantes"
 import postTurma from "./endpoints/postTurma"
 import getTurma from "./endpoints/getTurma"
 import putTurma from "./endpoints/putTurma"
+import postDocente from "./endpoints/postDocente"
+import getDocentes from "./endpoints/getDocentes"
 
 const app: Express = express()
 app.use(express.json())
@@ -21,6 +23,9 @@ app.put("/estudante/", putEstudanteTurma)
 app.get("/turma", getTurma)
 app.post("/turma", postTurma)
 app.put("/turma", putTurma)
+
+app.post("/docente", postDocente)
+app.get("/docentes", getDocentes)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

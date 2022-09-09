@@ -43,7 +43,7 @@ const postEstudante = async (req: Request, res: Response) => {
         res.status(201).send({ message: "Estudante criado com sucesso!" });
 
 
-    } catch (error) {
+    } catch (error: any) {
         error.sqlMessage ? res.status(statusCode).send({ message: error.sqlMessage })
             : res.status(statusCode).send({ message: error.message });
     }
