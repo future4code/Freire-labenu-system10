@@ -2,7 +2,7 @@ import { Docente } from "../types";
 import { connection } from "./connection";
 
 export default async function insertDocente(Docente: Docente): Promise<void> {
-    await connection("docente_").insert({
+    await connection("docente").insert({
         id: Docente.id,
         nome: Docente.nome,
         email: Docente.email,

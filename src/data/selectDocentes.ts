@@ -3,7 +3,7 @@ import { connection } from "./connection"
 
 export default async function selectDocente(): Promise<void | Docente[]> {
     
-    const result = await connection('docente_')
+    const result = await connection('docente')
     .select('*')
 
     if(!result) {
