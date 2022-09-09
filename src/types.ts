@@ -14,6 +14,12 @@ export type Estudante = {
     turma_id: string
 }
 
+export type DocenteInput = {
+    nome: string,
+    email: string,
+    data_nasc: string
+}
+
 export type Docente = {
     id: string,
     nome: string,
